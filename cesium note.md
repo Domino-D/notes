@@ -45,7 +45,7 @@
    export default class App extends Component {
    	componentDidMount() {
        	//load cesium map
-           //这里需要三个数据，经度，唯独，高度 用来定义 cesium camera 的试图位置
+           //这里需要三个数据，经度，纬度，高度 用来定义 cesium camera 的视图位置
        	let defaultCenter = Cartesian3.fromDegrees(121.604848, 31.178455, 10000)
        	this.refs.map.setViewer(defaultCenter)
    	}
