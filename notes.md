@@ -165,3 +165,18 @@ react native from today. mark - 2019/1/30 公司业务需求走上RN道路，原
 > }
 > ```
 
+React - setState(prevState => {})
+
+> ```javascript
+> //...
+> constructor(props) {
+>     super(props)
+>     this.state = {
+>         num: 1,
+>     }
+> }
+> //...
+> this.setState(prevState => {
+>     num: prevState.num + 1, //通过调用 prevState 形参，获取上一个状态组件中的 state 值
+> })
+> ```
