@@ -141,14 +141,56 @@ css z-index   valid
 
 flutter from tody. mark - 2019/1/24
 
+> * MaterialApp
+>
+> * Scaffold
+>
+> * Text
+>
+>   ```dart
+>   import 'package:flutter/material.dart';
+>   
+>   void main() => runApp(MyApp());
+>   
+>   var name = 'k';
+>   
+>   class MyApp extends StatelessWidget {
+>     @override
+>     Widget build(BuildContext context) {
+>       return new MaterialApp(
+>         title: "title",
+>         theme: ThemeData.light(), //背景主题色
+>         debugShowCheckedModeBanner: false, //消除界面右上角debug标签
+>         home: new Scaffold(
+>           body: new Text(
+>             "data $name", //变量引用，以$开头：$variablity
+>             textAlign: TextAlign.center,
+>             overflow: TextOverflow.clip, //clip:折叠; ellipsis:省略号; fade:淡出
+>             textScaleFactor: 3, //放大比率
+>             style: TextStyle(
+>               fontWeight: FontWeight.bold,
+>               fontFamily: "arial",
+>               height: 2, //行高
+>               decoration: TextDecoration.underline, //文本装饰类型
+>               decorationColor: Colors.red, //文本装饰颜色
+>               decorationStyle: TextDecorationStyle.dashed, //文本装饰样式
+>             ),
+>           ),
+>         ),
+>       );
+>     }
+>   }
+>   ```
+
 react native from today. mark - 2019/1/30 公司业务需求走上RN道路，原生APP你好！
 
 > * ```javascript
 >   RN 宽高样式支持 百分比：'100%'；像素：300，   并不支持屏幕比：'100vh'
 >   ```
+> ```
 >   * react-native-webviewla 依赖保，允许react-native中内嵌H5页面，通过跨域通讯
->
-> ```javascript
+> 
+> ​```javascript
 > import React, { Component } from "react"
 > import { StyleSheet, Text, View } from "react-native"
 > //react-native 中也包含同样名称和用途的组件，官方后续将剥离出来，最好使用react-native-webview
@@ -156,11 +198,11 @@ react native from today. mark - 2019/1/30 公司业务需求走上RN道路，原
 > 
 > class MyWebComponent extends Component {
 > render() {
->   return (
->     <WebView
->       source={{ uri: "https://facebook.github.io/react-native/" }}
->     />
->   )
+> return (
+>  <WebView
+>    source={{ uri: "https://facebook.github.io/react-native/" }}
+>  />
+> )
 > }
 > }
 > ```
