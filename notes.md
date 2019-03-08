@@ -180,3 +180,19 @@ React - setState(prevState => {})
 >     num: prevState.num + 1, //通过调用 prevState 形参，获取上一个状态组件中的 state 值
 > })
 > ```
+
+git stash
+
+> ```shell
+> //暂存挂起到工作区，回到当前分支最近一次提交状态
+> git stash
+> 
+> //显示暂存列表
+> git stash list
+> 
+> //回到挂起前状态，并同时删除暂存列表
+> git stash pop
+> 
+> //删除暂存列表中某一项
+> git stash drop stash@{0}
+> ```
