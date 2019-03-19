@@ -1,5 +1,7 @@
 flutter from tody. mark - 2019/1/24
 
+Demo
+
 > - MaterialApp
 > - Scaffold
 > - Text
@@ -37,5 +39,57 @@ flutter from tody. mark - 2019/1/24
 >    		);
 >  	}
 > }
+> ```
+
+Basic widgets
+
+> Container
+>
+> ```dart
+> (new) Container({
+>   Key key,
+>   AlignmentGeometry alignment,//浮动对齐
+>   EdgeInsetsGeometry padding,//内边距
+>   Color color,//背景色
+>   Decoration decoration,//child后的样式
+>   Decoration foregroundDecoration,//child前的样式
+>   double width,
+>   double height,
+>   BoxConstraints constraints,
+>   EdgeInsetsGeometry margin,//外边距
+>   Matrix4 transform,//旋转
+>   Widget child//子类
+> }) → Container
+>   
+> ```
+>
+> Row
+>
+> ```dart
+> (new) Row({
+>   Key key,
+>   MainAxisAlignment mainAxisAlignment: MainAxisAlignment.start,//横向对齐方式
+>   MainAxisSize mainAxisSize: MainAxisSize.max,//横向轴最大尺寸
+>   CrossAxisAlignment crossAxisAlignment: CrossAxisAlignment.center,//竖直位置
+>   TextDirection textDirection,//文字方向
+>   VerticalDirection verticalDirection: VerticalDirection.down,//竖直方向
+>   TextBaseline textBaseline,//文字基准线
+>   List<Widget> children: const <Widget> []//子类（数组）
+> }) → Row
+> ```
+>
+> Column
+>
+> ```dart
+> (new) Column({
+>   Key key,
+>   MainAxisAlignment mainAxisAlignment: MainAxisAlignment.start,//横向对齐方式
+>   MainAxisSize mainAxisSize: MainAxisSize.max,//横向轴最大尺寸
+>   CrossAxisAlignment crossAxisAlignment: CrossAxisAlignment.center,//竖直位置
+>   TextDirection textDirection,//文字方向
+>   VerticalDirection verticalDirection: VerticalDirection.down,//竖直方向
+>   TextBaseline textBaseline,//文字基准线
+>   List<Widget> children: const <Widget> []//子类（数组）
+> }) → Column
 > ```
 
