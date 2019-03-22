@@ -47,21 +47,23 @@ Basic widgets
 >
 > ```dart
 > (new) Container({
->   Key key,
->   AlignmentGeometry alignment,//浮动对齐
->   EdgeInsetsGeometry padding,//内边距
->   Color color,//背景色
->   Decoration decoration,//child后的样式
->   Decoration foregroundDecoration,//child前的样式
->   double width,
->   double height,
->   BoxConstraints constraints,
->   EdgeInsetsGeometry margin,//外边距
->   Matrix4 transform,//旋转
->   Widget child//子类
+> 	Key key,
+> 	AlignmentGeometry alignment,//浮动对齐
+> 	EdgeInsetsGeometry padding,//内边距
+> 	Color color,//背景色
+> 	Decoration decoration,//child后的样式
+> 	Decoration foregroundDecoration,//child前的样式
+> 	double width,
+> 	double height,
+> 	BoxConstraints constraints,
+> 	EdgeInsetsGeometry margin,//外边距
+> 	Matrix4 transform,//旋转
+> 	Widget child//子类
 > }) → Container
->   
+> 
 > ```
+>
+> 
 >
 > Row
 >
@@ -78,6 +80,8 @@ Basic widgets
 > }) → Row
 > ```
 >
+> 
+>
 > Column
 >
 > ```dart
@@ -91,5 +95,80 @@ Basic widgets
 >   TextBaseline textBaseline,//文字基准线
 >   List<Widget> children: const <Widget> []//子类（数组）
 > }) → Column
+> ```
+>
+> Image
+>
+> ```dart
+> Image.asset //加载资源图片，就是加载项目资源目录中的图片,加入图片后会增大打包的包体体积，用的是相对路径
+> Image.network //网络资源图片，意思就是你需要加入一段http://xxxx.xxx的这样的网络路径地址
+> Image.file //加载本地图片，就是加载本地文件中的图片，这个是一个绝对路径，跟包体无关【不常用】
+> Image.memory //加载Uint8List资源图片【不常用】
+> 
+> //——————————————————————
+> //attribute
+> image: AssetImage(String assetName, {AssetBundle bundle, String package}) → AssetImage
+> 
+> image: NetworkImage(String url, {double scale: 1.0, Map<String, String> headers}) → NetworkImage
+> ```
+>
+> Text
+>
+> ```dart
+> Text(String data,{ //文字字符串
+>   Key key,
+>   TextStyle style, //文字样式
+>   StrutStyle strutStyle,
+>   TextAlign textAlign, //对齐方式
+>   TextDirection textDirection, //文字装饰
+>   Locale locale,
+>   bool softWrap,
+>   TextOverflow overflow, //溢出显示
+>   double textScaleFactor, //缩放比例
+>   int maxLines, //最大行数
+>   String semanticsLabel
+> }) → Text
+> ```
+>
+> Icon
+>
+> ```dart
+> Icon(IconData icon, { 
+>   Key key,
+>   double size, //尺寸，默认24px
+>   Color color, //主题色
+>   String semanticLabel, //语义标签，供残障用户使用
+>   TextDirection textDirection //渲染图标方向，需要IconData.matchTextDirection字段为true
+> }) → Icon
+> 
+> //extensions
+> IconButton({
+>   Key key,
+>   double iconSize: 24.0,
+>   EdgeInsetsGeometry padding: const EdgeInsets.all(8.0),
+>   AlignmentGeometry alignment: Alignment.center,
+>   Widget icon,
+>   Color color,
+>   Color highlightColor, //按钮处于向下（按下）状态时按钮的辅助颜色
+>   Color splashColor, //按钮处于向下（按下）状态时按钮的主要颜色
+>   Color disabledColor,
+>   () → void onPressed, //点击回调函数
+>   String tooltip //辅助文字说明标签
+> }) → IconButton
+> 
+> Icons //引用flutter内置图标
+> 
+> IconTheme({
+>   Key key,
+>   IconThemeData data,//IconThemeData({Color color, double opacity, double size}) → IconThemeData
+>   Widget child //Icon和ImageIcon应用IconThemeData中定义的主题属性
+> }) → IconTheme
+> 
+> ImageIcon(ImageProvider<dynamic> image,{
+>   Key key,
+>   double size,
+>   Color color,
+>   String semanticLabel
+> }) → ImageIcon
 > ```
 
