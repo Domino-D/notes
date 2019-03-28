@@ -170,3 +170,56 @@ git stash
 > //删除暂存列表中某一项
 > git stash drop stash@{0}
 > ```
+
+CSS calc()
+
+> ```css
+> .example{
+>   //尺寸计算，支持 加减乘除
+>   width: calc(100% - 20px);
+>   height: calc(100% = 1em);
+> }
+> ```
+
+React component ref attribute
+
+> ```javascript
+> // 调用 dom 方法1
+> ...
+> let targetDom = this.refs.target
+> ...
+> <Children ref="target"/>
+> 
+> // 调用 dom 方法2
+> ...
+> let targetDom = this.target
+> ...
+> <Children ref={c => this.target = c}
+> ```
+
+Use functions of children component in parent component
+
+> ```javascript
+> // Parent.js
+> ...
+> getChildComponent(ref) {
+>   this.child = ref // 获取子组件class，这里的ref即是子组件
+> }
+> ...
+> this.child.getSomething()// 调用子组件函数方法
+> ...
+> <Child foo={this.foo.bind(this)}/>
+> 
+> 
+> // Child.js
+> ...
+> componentDidMount() {
+>   this.props.getChildComponent(this) // 这里的 this 指向子组件
+> }
+> 
+> getSomething() {
+>   console.log('Got it')
+> }
+> ...
+> ```
+
