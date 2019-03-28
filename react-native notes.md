@@ -43,3 +43,8 @@ Error: `React/RCTBundleURLProvider.h' file not found`
 > 2. 如果 Scheme 中没有 React，新建 Scheme 中选择 React
 >
 >    Menu => Product => Scheme => Manage Schemes => React
+
+RN issues
+
+> 热度不在，凄凉，可怕
+
