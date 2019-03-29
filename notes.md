@@ -223,3 +223,45 @@ Use functions of children component in parent component
 > ...
 > ```
 
+reduce()
+
+> `reduce(callback(accumulator, currentValue, currentIndex, array))`
+>
+> ```js
+> let arr = [0, 1, 2, 3, 4]
+> arr.reduce(
+>   (accumulator, currentValue, currentIndex, array) => accumulator + currentValue
+> )
+> ```
+>
+> 回调状态变更历程
+>
+> | `callback`  | `accumulator` | `currentValue` | `currentIndex` | `array`           | `return value` |
+> | :---------- | :-----------: | :------------- | :------------- | :---------------- | :------------- |
+> | first call  |      `0`      | `1`            | `1`            | `[0, 1, 2, 3, 4]` | `1`            |
+> | second call |      `1`      | `2`            | `2`            | `[0, 1, 2, 3, 4]` | `3`            |
+> | third call  |      `3`      | `3`            | `3`            | `[0, 1, 2, 3, 4]` | `6`            |
+> | fourth call |      `6`      | `4`            | `4`            | `[0, 1, 2, 3, 4]` | `10`           |
+>
+> 
+>
+> `reduce(callback(accumulator, currentValue, currentIndex, array), initialValue)`
+>
+> ```javascript
+> let arr = [0, 1, 2, 3, 4]
+> arr.reduce(
+>   (accumulator, currentValue, currentIndex, array) => accumulator + currentValue,
+>   10
+> )
+> ```
+>
+> 回调状态变更历程
+>
+> | `callback`  | `accumulator` | `currentValue` | `currentIndex` | `array`           | return value |
+> | :---------- | :------------ | :------------- | :------------: | :---------------- | :----------- |
+> | first call  | `10`          | `0`            |      `0`       | `[0, 1, 2, 3, 4]` | `10`         |
+> | second call | `10`          | `1`            |      `1`       | `[0, 1, 2, 3, 4]` | `11`         |
+> | third call  | `11`          | `2`            |      `2`       | `[0, 1, 2, 3, 4]` | `13`         |
+> | fourth call | `13`          | `3`            |      `3`       | `[0, 1, 2, 3, 4]` | `16`         |
+> | fifth call  | `16`          | `4`            |      `4`       | `[0, 1, 2, 3, 4]` | `20`         |
+
