@@ -69,14 +69,14 @@ Basic widgets
 >
 > ```dart
 > (new) Row({
->   Key key,
->   MainAxisAlignment mainAxisAlignment: MainAxisAlignment.start,//横向对齐方式
->   MainAxisSize mainAxisSize: MainAxisSize.max,//横向轴最大尺寸
->   CrossAxisAlignment crossAxisAlignment: CrossAxisAlignment.center,//竖直位置
->   TextDirection textDirection,//文字方向
->   VerticalDirection verticalDirection: VerticalDirection.down,//竖直方向
->   TextBaseline textBaseline,//文字基准线
->   List<Widget> children: const <Widget> []//子类（数组）
+> Key key,
+> MainAxisAlignment mainAxisAlignment: MainAxisAlignment.start,//横向对齐方式
+> MainAxisSize mainAxisSize: MainAxisSize.max,//横向轴最大尺寸
+> CrossAxisAlignment crossAxisAlignment: CrossAxisAlignment.center,//竖直位置
+> TextDirection textDirection,//文字方向
+> VerticalDirection verticalDirection: VerticalDirection.down,//竖直方向
+> TextBaseline textBaseline,//文字基准线
+> List<Widget> children: const <Widget> []//子类（数组）
 > }) → Row
 > ```
 >
@@ -86,14 +86,14 @@ Basic widgets
 >
 > ```dart
 > (new) Column({
->   Key key,
->   MainAxisAlignment mainAxisAlignment: MainAxisAlignment.start,//横向对齐方式
->   MainAxisSize mainAxisSize: MainAxisSize.max,//横向轴最大尺寸
->   CrossAxisAlignment crossAxisAlignment: CrossAxisAlignment.center,//竖直位置
->   TextDirection textDirection,//文字方向
->   VerticalDirection verticalDirection: VerticalDirection.down,//竖直方向
->   TextBaseline textBaseline,//文字基准线
->   List<Widget> children: const <Widget> []//子类（数组）
+> Key key,
+> MainAxisAlignment mainAxisAlignment: MainAxisAlignment.start,//横向对齐方式
+> MainAxisSize mainAxisSize: MainAxisSize.max,//横向轴最大尺寸
+> CrossAxisAlignment crossAxisAlignment: CrossAxisAlignment.center,//竖直位置
+> TextDirection textDirection,//文字方向
+> VerticalDirection verticalDirection: VerticalDirection.down,//竖直方向
+> TextBaseline textBaseline,//文字基准线
+> List<Widget> children: const <Widget> []//子类（数组）
 > }) → Column
 > ```
 >
@@ -116,17 +116,17 @@ Basic widgets
 >
 > ```dart
 > Text(String data,{ //文字字符串
->   Key key,
->   TextStyle style, //文字样式
->   StrutStyle strutStyle,
->   TextAlign textAlign, //对齐方式
->   TextDirection textDirection, //文字装饰
->   Locale locale,
->   bool softWrap,
->   TextOverflow overflow, //溢出显示
->   double textScaleFactor, //缩放比例
->   int maxLines, //最大行数
->   String semanticsLabel
+> Key key,
+> TextStyle style, //文字样式
+> StrutStyle strutStyle,
+> TextAlign textAlign, //对齐方式
+> TextDirection textDirection, //文字装饰
+> Locale locale,
+> bool softWrap,
+> TextOverflow overflow, //溢出显示
+> double textScaleFactor, //缩放比例
+> int maxLines, //最大行数
+> String semanticsLabel
 > }) → Text
 > ```
 >
@@ -134,41 +134,68 @@ Basic widgets
 >
 > ```dart
 > Icon(IconData icon, { 
->   Key key,
->   double size, //尺寸，默认24px
->   Color color, //主题色
->   String semanticLabel, //语义标签，供残障用户使用
->   TextDirection textDirection //渲染图标方向，需要IconData.matchTextDirection字段为true
+> Key key,
+> double size, //尺寸，默认24px
+> Color color, //主题色
+> String semanticLabel, //语义标签，供残障用户使用
+> TextDirection textDirection //渲染图标方向，需要IconData.matchTextDirection字段为true
 > }) → Icon
 > 
 > //extensions
 > IconButton({
->   Key key,
->   double iconSize: 24.0,
->   EdgeInsetsGeometry padding: const EdgeInsets.all(8.0),
->   AlignmentGeometry alignment: Alignment.center,
->   Widget icon,
->   Color color,
->   Color highlightColor, //按钮处于向下（按下）状态时按钮的辅助颜色
->   Color splashColor, //按钮处于向下（按下）状态时按钮的主要颜色
->   Color disabledColor,
->   () → void onPressed, //点击回调函数
->   String tooltip //辅助文字说明标签
+> Key key,
+> double iconSize: 24.0,
+> EdgeInsetsGeometry padding: const EdgeInsets.all(8.0),
+> AlignmentGeometry alignment: Alignment.center,
+> Widget icon,
+> Color color,
+> Color highlightColor, //按钮处于向下（按下）状态时按钮的辅助颜色
+> Color splashColor, //按钮处于向下（按下）状态时按钮的主要颜色
+> Color disabledColor,
+> () → void onPressed, //点击回调函数
+> String tooltip //辅助文字说明标签
 > }) → IconButton
 > 
 > Icons //引用flutter内置图标
 > 
 > IconTheme({
->   Key key,
->   IconThemeData data,//IconThemeData({Color color, double opacity, double size}) → IconThemeData
->   Widget child //Icon和ImageIcon应用IconThemeData中定义的主题属性
+> Key key,
+> IconThemeData data,//IconThemeData({Color color, double opacity, double size}) → IconThemeData
+> Widget child //Icon和ImageIcon应用IconThemeData中定义的主题属性
 > }) → IconTheme
 > 
 > ImageIcon(ImageProvider<dynamic> image,{
->   Key key,
->   double size,
->   Color color,
->   String semanticLabel
+> Key key,
+> double size,
+> Color color,
+> String semanticLabel
 > }) → ImageIcon
+> ```
+>
+> RaisedButton
+>
+> ```dart
+> (new) RaisedButton({
+>   Key key,
+>   () → void onPressed,
+>   (bool) → void onHighlightChanged,
+>   ButtonTextTheme textTheme,
+>   Color textColor,
+>   Color disabledTextColor,
+>   Color color,
+>   Color disabledColor,
+>   Color highlightColor,
+>   Color splashColor,
+>   Brightness colorBrightness,
+>   double elevation,
+>   double highlightElevation,
+>   double disabledElevation,
+>   EdgeInsetsGeometry padding,
+>   ShapeBorder shape,
+>   Clip clipBehavior: Clip.none,
+>   MaterialTapTargetSize materialTapTargetSize,
+>   Duration animationDuration,
+>   Widget child
+> }) → RaisedButton
 > ```
 
