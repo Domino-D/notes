@@ -1,6 +1,6 @@
-flutter from tody. mark - 2019/1/24
+#### flutter from tody. mark - 2019/1/24
 
-Demo
+#### Demo
 
 > - MaterialApp
 > - Scaffold
@@ -41,7 +41,7 @@ Demo
 > }
 > ```
 
-Basic widgets
+#### Basic widgets
 
 > Container
 >
@@ -172,6 +172,16 @@ Basic widgets
 > }) → ImageIcon
 > ```
 >
+> FlatButton 背景透明按钮
+>
+> FloatingActionButton 浮动按钮
+>
+> IconButton 图标按钮
+>
+> PopupMenuButton 下拉菜单按钮
+>
+> 
+>
 > RaisedButton
 >
 > ```dart
@@ -223,3 +233,63 @@ Basic widgets
 > }) → AppBar
 > ```
 
+#### Theme
+
+> ThemeData
+>
+> ```dart
+> (new) ThemeData({
+>   Brightness brightness,
+>   MaterialColor primarySwatch,
+>   Color primaryColor,
+>   Brightness primaryColorBrightness,
+>   Color primaryColorLight,
+>   Color primaryColorDark,
+>   Color accentColor,
+>   Brightness accentColorBrightness,
+>   Color canvasColor,
+>   Color scaffoldBackgroundColor,
+>   Color bottomAppBarColor,
+>   Color cardColor,
+>   Color dividerColor,
+>   Color highlightColor,
+>   Color splashColor,
+>   InteractiveInkFeatureFactory splashFactory,
+>   Color selectedRowColor,
+>   Color unselectedWidgetColor,
+>   Color disabledColor,
+>   Color buttonColor,
+>   ButtonThemeData buttonTheme,
+>   Color secondaryHeaderColor,
+>   Color textSelectionColor,
+>   Color cursorColor,
+>   Color textSelectionHandleColor,
+>   Color backgroundColor,
+>   Color dialogBackgroundColor,
+>   Color indicatorColor,
+>   Color hintColor,
+>   Color errorColor,
+>   Color toggleableActiveColor,
+>   String fontFamily,
+>   TextTheme textTheme,
+>   TextTheme primaryTextTheme,
+>   TextTheme accentTextTheme,
+>   InputDecorationTheme inputDecorationTheme,
+>   IconThemeData iconTheme,
+>   IconThemeData primaryIconTheme,
+>   IconThemeData accentIconTheme,
+>   SliderThemeData sliderTheme,
+>   TabBarTheme tabBarTheme,
+>   CardTheme cardTheme,
+>   ChipThemeData chipTheme,
+>   TargetPlatform platform,
+>   MaterialTapTargetSize materialTapTargetSize,
+>   PageTransitionsTheme pageTransitionsTheme,
+>   AppBarTheme appBarTheme,
+>   BottomAppBarTheme bottomAppBarTheme,
+>   ColorScheme colorScheme,
+>   DialogTheme dialogTheme,
+>   Typography typography,
+>   CupertinoThemeData cupertinoOverrideTheme
+> }) → ThemeData
+> ```
