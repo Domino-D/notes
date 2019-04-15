@@ -176,26 +176,50 @@ Basic widgets
 >
 > ```dart
 > (new) RaisedButton({
->   Key key,
->   () → void onPressed,
->   (bool) → void onHighlightChanged,
->   ButtonTextTheme textTheme,
->   Color textColor,
->   Color disabledTextColor,
->   Color color,
->   Color disabledColor,
->   Color highlightColor,
->   Color splashColor,
->   Brightness colorBrightness,
->   double elevation,
->   double highlightElevation,
->   double disabledElevation,
->   EdgeInsetsGeometry padding,
->   ShapeBorder shape,
->   Clip clipBehavior: Clip.none,
->   MaterialTapTargetSize materialTapTargetSize,
->   Duration animationDuration,
->   Widget child
+> Key key,
+> () → void onPressed,
+> (bool) → void onHighlightChanged,
+> ButtonTextTheme textTheme,
+> Color textColor,
+> Color disabledTextColor,
+> Color color,
+> Color disabledColor,
+> Color highlightColor, //按钮处于向下（按下）状态时按钮的辅助颜色
+> Color splashColor, //按钮处于向下（按下）状态时按钮的主要颜色
+> Brightness colorBrightness,
+> double elevation,
+> double highlightElevation,
+> double disabledElevation,
+> EdgeInsetsGeometry padding,
+> ShapeBorder shape,
+> Clip clipBehavior: Clip.none,
+> MaterialTapTargetSize materialTapTargetSize,
+> Duration animationDuration,
+> Widget child
 > }) → RaisedButton
+> ```
+>
+> AppBar
+>
+> ```dart
+> (new) AppBar({
+>   Key key,
+>   Widget leading, //标题上方widget
+>   bool automaticallyImplyLeading: true,
+>   Widget title,
+>   List<Widget> actions, //标题下方功能按钮组
+>   Widget flexibleSpace,
+>   PreferredSizeWidget bottom,
+>   double elevation,
+>   Color backgroundColor,
+>   Brightness brightness,//亮度
+>   IconThemeData iconTheme,
+>   TextTheme textTheme,
+>   bool primary: true,
+>   bool centerTitle, //标题是否居中
+>   double titleSpacing: NavigationToolbar.kMiddleSpacing,
+>   double toolbarOpacity: 1.0, //工具栏透明度
+>   double bottomOpacity: 1.0 //底部透明度
+> }) → AppBar
 > ```
 
