@@ -97,6 +97,8 @@
 > }) → Column
 > ```
 >
+> 
+>
 > Image
 >
 > ```dart
@@ -111,6 +113,8 @@
 > 
 > image: NetworkImage(String url, {double scale: 1.0, Map<String, String> headers}) → NetworkImage
 > ```
+>
+> 
 >
 > Text
 >
@@ -129,6 +133,8 @@
 > String semanticsLabel
 > }) → Text
 > ```
+>
+> 
 >
 > Icon
 >
@@ -208,6 +214,8 @@
 > Widget child
 > }) → RaisedButton
 > ```
+>
+> 
 >
 > AppBar
 >
@@ -293,3 +301,112 @@
 >   CupertinoThemeData cupertinoOverrideTheme
 > }) → ThemeData
 > ```
+
+#### Layout
+
+> ##### Basic layout
+>
+> Container 
+>
+> ```dart as above
+> //as above
+> ```
+>
+> Padding
+>
+> ```dart
+> Padding({Key key, EdgeInsetsGeometry padding, Widget child}) → Padding
+> ```
+>
+> Center
+>
+> ```dart
+> Center({Key key, double widthFactor, double heightFactor, Widget child}) → Center
+> ```
+>
+> Align
+>
+> ```dart
+> Align({Key key, AlignmentGeometry alignment: Alignment.center, double widthFactor, double heightFactor, Widget child}) → Align
+> ```
+>
+> FittedBox 内部元素大小随动变化
+>
+> ```dart
+> FittedBox({Key key, BoxFit fit: BoxFit.contain, AlignmentGeometry alignment: Alignment.center, Widget child}) → FittedBox
+> ```
+>
+> AspectRatio   定长宽比widget
+>
+> ```dart
+> AspectRatio({Key key, double aspectRatio, Widget child}) → AspectRatio
+> ```
+>
+> ConstrainedBox 约束内部元素widget
+>
+> ```dart
+> ConstrainedBox({Key key, BoxConstraints constraints, Widget child}) → ConstrainedBox
+> ```
+>
+> IntrinsicHeight 子元素撑满高度
+>
+> ```dart
+> IntrinsicHeight({Key key, Widget child}) → IntrinsicHeight
+> ```
+>
+> IntrinsicWidth  子元素撑满宽度
+>
+> ```dart
+> IntrinsicWidth({Key key, double stepWidth, double stepHeight, Widget child}) → IntrinsicWidth
+> ```
+>
+> ##### Complex layout
+>
+> Row
+>
+> ```dart
+> //as above
+> ```
+>
+> Column
+>
+> ```dart
+> //as above
+> ```
+>
+> Stack 允许堆叠
+>
+> ```dart
+> Stack({Key key, AlignmentGeometry alignment: AlignmentDirectional.topStart, TextDirection textDirection, StackFit fit: StackFit.loose, Overflow overflow: Overflow.clip, List<Widget> children: const <Widget> []}) → Stack
+> ```
+>
+> Flow 
+>
+> ```dart
+> Flow({Key key, FlowDelegate delegate, List<Widget> children: const <Widget> []}) → Flow
+> ```
+>
+> Table
+>
+> ```dart
+> Table({Key key, List<TableRow> children: const <TableRow> [], Map<int, TableColumnWidth> columnWidths, TableColumnWidth defaultColumnWidth: const FlexColumnWidth(1.0), TextDirection textDirection, TableBorder border, TableCellVerticalAlignment defaultVerticalAlignment: TableCellVerticalAlignment.top, TextBaseline textBaseline}) → Table
+> ```
+>
+> Wrap
+>
+> ```dart
+> Wrap({Key key, Axis direction: Axis.horizontal, WrapAlignment alignment: WrapAlignment.start, double spacing: 0.0, WrapAlignment runAlignment: WrapAlignment.start, double runSpacing: 0.0, WrapCrossAlignment crossAxisAlignment: WrapCrossAlignment.start, TextDirection textDirection, VerticalDirection verticalDirection: VerticalDirection.down, List<Widget> children: const <Widget> []}) → Wrap
+> ```
+>
+> ListBody
+>
+> ```dart
+> ListBody({Key key, Axis mainAxis: Axis.vertical, bool reverse: false, List<Widget> children: const <Widget> []}) → ListBody
+> ```
+>
+> ListView
+>
+> ```dart
+> ListView({Key key, Axis scrollDirection: Axis.vertical, bool reverse: false, ScrollController controller, bool primary, ScrollPhysics physics, bool shrinkWrap: false, EdgeInsetsGeometry padding, double itemExtent, bool addAutomaticKeepAlives: true, bool addRepaintBoundaries: true, bool addSemanticIndexes: true, double cacheExtent, List<Widget> children: const <Widget> [], int semanticChildCount, DragStartBehavior dragStartBehavior: DragStartBehavior.down}) → ListView
+> ```
+
