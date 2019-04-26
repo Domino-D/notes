@@ -122,3 +122,38 @@ print(b is! String); //false
 | toString()   | 转为字符串                              |
 | truncate()   | 舍去小数，截断功能                      |
 
+#### 数组属性与操作方法
+
+属性
+
+| 属性       | 描述                                           |
+| ---------- | ---------------------------------------------- |
+| first      | 返回数组中第一个元素                           |
+| isEmpty    | 判断数组为空数组【boolean】                    |
+| isNotEmpty | 判断数组为非空数组【boolean】                  |
+| length     | 数组长度                                       |
+| last       | 返回数组中最后一个元素                         |
+| reversed   | 返回倒序数组                                   |
+| single     | 检查数组是否只用一个元素并返回该元素，否则报错 |
+
+方法
+
+| 方法                                                       | 描述                                         |
+| ---------------------------------------------------------- | -------------------------------------------- |
+| add(el)                                                    | 在数组末尾添加单个元素                       |
+| addAll([el1, el2])                                         | 在数组末尾添加多个元素                       |
+| insert(index,value)                                        | 在数组指定指针位置添加单个元素               |
+| insertAll(index, iterable_list_of_values)                  | 在数组指定指针位置添加多个元素               |
+| replaceRange(int start_index,int end_index,Iterable[item]) | 替代数组起止指针的多个元素，起始指针左闭右开 |
+| remove()                                                   | 删除指定值元素                               |
+| removeAt(int index)                                        | 删除对应指针的元素                           |
+| removeLast()                                               | 删除数组中最后一个元素                       |
+| removeRange(int start, int end)                            | 删除给定指针区间内的元素，左闭右开           |
+
+```dart
+List l = [1, 2, 3, 4, 5];
+l.replaceRange(0, 2, [4, 5, 6]); // [4, 5, 6, 3, 4, 5]
+l.replaceRange(0, 2, [4]); // [4, 3, 4, 5]
+l.replaceRange(0, 2, []); // [3, 4, 5]
+```
+

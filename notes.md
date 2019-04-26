@@ -144,15 +144,17 @@ React - setState(prevState => {})
 > ```javascript
 > //...
 > constructor(props) {
->     super(props)
->     this.state = {
->         num: 1,
->     }
+>  super(props)
+>  this.state = {
+>      num: 1,
+>  }
 > }
 > //...
-> this.setState(prevState => {
->     num: prevState.num + 1, //通过调用 prevState 形参，获取上一个状态组件中的 state 值
-> })
+> this.setState(
+>   prevState => ({
+>  		num: prevState.num + 1, //通过调用 prevState 形参，获取上一个状态组件中的 state 值
+> 	})
+> )
 > ```
 
 git stash
