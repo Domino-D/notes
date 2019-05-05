@@ -268,3 +268,27 @@ reduce()
 > | fourth call | `13`          | `3`            |      `3`       | `[0, 1, 2, 3, 4]` | `16`         |
 > | fifth call  | `16`          | `4`            |      `4`       | `[0, 1, 2, 3, 4]` | `20`         |
 
+context
+
+> ```javascript
+> // define
+> const {Provider, Consumer} = React.createContext(defaultValue)
+> // or
+> const contentContext = React.createContext(defaultValue)
+> 
+> 
+> // provider
+> <Provider value={/* some value */}>
+> // or
+> <contentContext.Provider value={/* some value */}>
+> 
+> 
+> // consumer
+> <Consumer>
+>   {value => /* render something based on the context value */}
+> </Consumer>
+> // or
+> <contentContext.Consumer>
+>   {value => /* render something based on the context value */}
+> </contentContext.Consumer>
+> ```
