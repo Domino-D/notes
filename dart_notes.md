@@ -157,3 +157,113 @@ l.replaceRange(0, 2, [4]); // [4, 3, 4, 5]
 l.replaceRange(0, 2, []); // [3, 4, 5]
 ```
 
+#### 函数
+
+函数定义
+
+```dart
+// 函数通常定义方式
+func_name() {
+  // func_body
+}
+
+// void 表示函数没有任何返回值
+void func_name() {
+  // func_body
+}
+```
+
+函数调用
+
+```dart
+void main() {
+  func()
+}
+func() {
+  print('function')
+}
+```
+
+函数返回值
+
+```dart
+return_type func_name() {
+  return value;
+}
+```
+
++ return_type 为有效的数据类型
++ return 可选，未指定为 null
++ 函数实际返回值，必须与指定的 return_type 相一致
++ 单个函数只有一个返回值
+
+```dart
+void main() {
+  print(func());
+}
+
+String func() {
+  return 'abc';
+}
+```
+
+函数可选参数，命名参数，默认参数
+
+```dart
+void main() {
+ func1(123);
+ func2(123);
+ func2(123,s1:'abc');
+ func2(123,s2:'abc',s1:'def');
+ func3(123);
+}
+
+void func1(n1,[s1]) {
+ print(n1);
+ print(s1);
+}
+
+void func2(n1,{s1,s2}) {
+ print(n1);
+ print(s1);
+}
+
+void func3(n1,{s1:12}) {
+   print(n1);
+   print(s1);
+}
+/**
+123
+null
+123
+null
+123
+abc
+123
+def
+123
+12
+*/
+```
+
+#### 字典（对象）
+
+属性
+
+| 属性       | 描述                 |
+| ---------- | -------------------- |
+| keys       | 获取所有键值集合     |
+| values     | 获取所有键对应值集合 |
+| length     | 获取键值对数量       |
+| isEmpty    | 判断是否为空对象     |
+| isNotEmpty | 判断是否为非空对象   |
+
+方法
+
+| 方法                   | 描述                                     |
+| ---------------------- | ---------------------------------------- |
+| addAll()               | 末尾添加键值对                           |
+| clear()                | 清空对象                                 |
+| remove(key)            | 删除指定键值对，返回值为指定键值对应的值 |
+| forEach((k, v) => ...) | 循环调用内部键值对方法                   |
+
