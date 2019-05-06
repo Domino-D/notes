@@ -292,3 +292,40 @@ context
 >   {value => /* render something based on the context value */}
 > </contentContext.Consumer>
 > ```
+
+grid - CSS
+
+> ```css
+> /* 父元素申明 grid 布局*/
+> .container {
+>   display: grid;
+>   grid-template-columns: 100px 100px 100px 100px; /*均匀排列4列，每列100px*/
+>   grid-template-rows: 100px 100px 100px 100px; /*均匀排列4行，每行100px*/
+>   grid-gap: 2px; /*定义行列固定间距 2px*/
+>   /* 等价拆分写法
+>   grid-row-gap: 2px;
+>   grid-column-gap: 2px;
+>   */
+> }
+> 
+> .item1 {
+>   grid-row-start: 2; /*栅格单元，从栅格行的第2栅格线开始；单独出现，补全单个栅格单元*/
+>   grid-row-end: 3; /*栅格单元，到栅格行的第3栅格线结束；单独出现，补全单个栅格单元*/
+>   grid-column-start: 2; /*栅格单元，从栅格列的第2栅格线开始；单独出现，补全单个栅格单元*/
+>   grid-column-end: 3; /*栅格单元，到栅格列的第3栅格线结束；单独出现，补全单个栅格单元*/
+> }
+> 
+> .item2 {
+>   grid-row: 4 / 6; /*栅格单元，从栅格行的第4栅格线开始，到栅格行的第6栅格线结束*/
+>   grid-column: 4 / 6; /*栅格单元，从栅格列的第4栅格线开始，到栅格列的第6栅格线结束*/
+> }
+> 
+> .item3 {
+>   grid-row: span 2; /*栅格单元，自身跨越两行*/
+>   grid-column: span 2; /*栅格单元，自身跨越两列*/
+> }
+> 
+> .item4 {
+>   grid-area: -3 / 4 / -1 / 3; /*固定顺序，row-start / column-start / row-end / column-end ;对应的行或列的起始位置可对换*/
+> }
+> ```
