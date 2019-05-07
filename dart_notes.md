@@ -1,5 +1,3 @@
-## 多种数据类型变量定义与内置方法
-
 #### 变量定义与扩展
 
 Dart数字变量定义
@@ -210,25 +208,132 @@ const bool d1 = false;
 
 方法
 
-| 方法                                                       | 描述                                         |
-| ---------------------------------------------------------- | -------------------------------------------- |
-| add(el)                                                    | 在列表末尾添加单个元素                       |
-| addAll([el1, el2])                                         | 在列表末尾添加多个元素                       |
-| insert(index,value)                                        | 在列表指定指针位置添加单个元素               |
-| insertAll(index, iterable_list_of_values)                  | 在列表指定指针位置添加多个元素               |
-| replaceRange(int start_index,int end_index,Iterable[item]) | 替代列表起止指针的多个元素，起始指针左闭右开 |
-| remove()                                                   | 删除指定值元素                               |
-| removeAt(int index)                                        | 删除对应指针的元素                           |
-| removeLast()                                               | 删除列表中最后一个元素                       |
-| removeRange(int start, int end)                            | 删除给定指针区间内的元素，左闭右开           |
-| indexOf(el)                                                | 返回给定元素指针                             |
-| lastIndexOf(el)                                            | 返回给定元素指针                             |
+| 方法                                                         | 描述                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| add(el)                                                      | 在列表末尾添加单个元素                                       |
+| addAll([el1, el2, ...])                                      | 在列表末尾添加多个元素                                       |
+| asMap()                                                      | 将列表转换为对象，键名为原列表指针                           |
+| any()                                                        | 列表中是否有至少一个元素满足条件【boolean】，类同于contains() |
+| clear()                                                      | 清空列表，改变原列表                                         |
+| contains(el)                                                 | 列表中是否包含某元素【boolean】，类同于any()                 |
+| elementAt(index)                                             | 返回对应指针的元素值                                         |
+| every()                                                      | 列表中是否每个元素都满足条件【boolean】                      |
+| expand((el) => statement)                                    | 对列表中的每个元素进行扩展操作，返回可遍历对象(el1, el2, el3, ...) |
+| fillRange(int start, int end, [int fillValue])               | 指定指针区间单一元素填充，start 必填，end 必填，左闭右开，fillValue 为单个 int 型变量 |
+| firstWhere((E) → bool test, {() → E orElse})                 | 返回列表中满足条件的第一个元素，不满足则返回-1               |
+| getRange(int start, int end)                                 | 获取指针区间内元素的可遍历对象，左闭右开                     |
+| insert(int index, int value)                                 | 在列表指定指针位置插入单个int型元素                          |
+| insertAll(int index, Iterable<int> iterable)                 | 在列表指定指针位置插入int型元素列表                          |
+| indexOf(el)                                                  | 返回给定元素指针，不满足则返回-1                             |
+| indexWhere((int) → bool test, [int start = 0])               | 返回列表中满足条件的第一个元素的指针，可指定验证起始指针，默认从头开始，不满足则返回-1 |
+| join([String separator = ""])                                | 返回字符串，默认不分割，参照JS中join方法                     |
+| lastIndexOf(int element, [int start])                        | 返回指定元素的指针值，可以给定起始查询指针，不满足则返回-1   |
+| lastIndexWhere((int) → bool test, [int start])               | 返回列表中满足条件的第一个元素的指针，可指定验证起始指针，不满足则返回-1 |
+| lastIndexWhere((int) → bool test, [int start])               | 返回列表中满足条件的最后一个元素，不满足则返回-1             |
+| map<T>((E) → T f)                                            | 遍历扩展每个列表中的元素，返回可遍历对象                     |
+| removeAt(int index) → int                                    | 删除指定指针对应的元素值，返回被删除元素，更改原列表         |
+| remove(el)                                                   | 删除指定元素值，返回【boolean】，更改原列表                  |
+| removeLast() → int                                           | 删除列表最后一个元素，返回被删除元素值，更改原列表           |
+| removeRange(int start, int end)                              | 删除列表指针区间内元素，无返回值，更改原列表                 |
+| removeWhere((String) → bool test) → void                     | 删除列表中满足判断条件的所有元素，无返回值，更改原列表       |
+| replaceRange(int start, int end, Iterable<int> replacement)  | 替换列表中给定指针区间内的元素，更改原列表                   |
+| retainWhere((int) → bool test) → void                        | 筛选出列表中满足条件的所有元素的列表，替代原列表，无返回值   |
+| setAll(int index, Iterable<int> iterable) → void             | 从指定指针开始替换列表元素，不能溢出，无返回值               |
+| setRange(int start, int end, Iterable<int> iterable, [int skipCount = 0]) → void | 更改列表指定指针区间内的元素，无返回值                       |
+| shuffle() → void                                             | 随机排序列表，无返回值                                       |
+| skip(int count) → Iterable<E>                                | 跳过列表前count个元素，返回可遍历对象，非列表                |
+| sort([(int, int) → int compare]) → void                      | 快速排序                                                     |
+| sublist(int start, [int end]) → List<String>                 | 从列表中截取起止指针区间内的元素，返回结果列表，左闭右开     |
+| take(int count) → Iterable<E>                                | 截取列表前count个元素，并返回可遍历对象                      |
+| takeWhile((E) → bool test) → Iterable<E>                     | 从列表首个元素开始验证条件，返回可遍历对象，任一元素不符合条件，立即停止条件判断 |
+| toList()                                                     | 列表化数据，可遍历对象转列表                                 |
+| toSet()                                                      | 去重列表化数据                                               |
+| toString()                                                   | 字符串话数据                                                 |
+| where((E) → bool test) → Iterable<E>                         | 筛选出满足条件的可遍历对象                                   |
+| whereType<T>() → Iterable<T>                                 | 筛选列表中某类型的所有元素，返回可遍历对象                   |
+
+示例：
 
 ```dart
+// expand
+List a = [1, 2, 3];
+var b = a.expand((el) => [el, el + 1]);
+var c = b.toList();
+print(b); // (1, 2, 2, 3, 3, 4)
+print(c); // [1, 2, 2, 3, 3, 4]
+
+// fillRange
+List list = [1, 2, 3];
+list.fillRange(1, 2, 4); // [1, 4, 3]
+list.fillRange(1, 3, 4); // [1, 4, 4]
+
+// getRange
+List foo = [1, 2, 3];
+var res = foo.getRange(1, 3);
+print(res); // (2, 3)
+
+// map
+var ls = [1, 2, 3];
+var resls = ls.map((el) => el + 1);
+var resls = ls.map((el) => el + 1).toList();
+print(resls); // (1, 2, 3)
+
+// replaceRange
 List l = [1, 2, 3, 4, 5];
 l.replaceRange(0, 2, [4, 5, 6]); // [4, 5, 6, 3, 4, 5]
 l.replaceRange(0, 2, [4]); // [4, 3, 4, 5]
 l.replaceRange(0, 2, []); // [3, 4, 5]
+
+// retainWhere
+var retainList = [1, 2, 3, 4];
+retainList.retainWhere((el) => el > 2)
+print(retainList); // [3, 4]
+
+// setAll
+var setList = [1, 2, 3];
+setList.setAll(1, [4, 5]);
+print(setList); // [1, 4, 5]
+setList.setAll(1, [4, 5, 6]);
+print(setList); // RangeError.checkValidRange
+
+// setRange
+List<int> list1 = [1, 2, 3, 4];
+List<int> list2 = [5, 6, 7, 8, 9];
+list1.setRange(1, 3, list2, 3);
+print(list1); // [1, 8, 9, 4]
+list1.setRange(1, 3, list2, 1);
+print(list1); // [1, 6, 7, 4]
+list1.setRange(1, 3, list2, 4);
+print(list1); // Too few elements
+
+// skip
+List ls1 = [1, 2, 3, 4];
+var iterable = ls1.skip(2);
+var iterable1 = ls1.skip(2).toList();
+print(iterable); // (3, 4)
+print(iterable1); // [3, 4]
+
+// sort
+List<num> ls2 = [1, 2, 3, 4];
+List<num> ls3 = [5, 6, 7];
+ls2.sort((a, b) => b - a);
+ls3.sort((a, b) => a - b);
+print(ls2); // [4, 3, 2, 1]
+print(ls3); // [5, 6, 7]
+
+// takeWhile
+List<int> list2 = [6, 5, 7, 8, 9];
+var res1 = list2.takeWhile((el) => el > 5); 
+var res2 = list2.takeWhile((el) => el > 4);
+var res1 = list2.takeWhile((el) => el > 6); 
+print(res1); // (6)
+print(res2); // (6, 5, 7, 8, 9)
+print(res3); // ()
+
+// whereType
+List list2 = [6, '5', 7, 8, 9];
+var res = list2.whereType<String>();
+print(res); // (5)
 ```
 
 
@@ -326,13 +431,13 @@ def
 
 属性
 
-| 属性       | 描述               |
-| ---------- | ------------------ |
-| keys       | 获取所有键名集合   |
-| values     | 获取所有键值集合   |
-| length     | 获取键值对数量     |
-| isEmpty    | 判断是否为空对象   |
-| isNotEmpty | 判断是否为非空对象 |
+| 属性       | 描述                   |
+| ---------- | ---------------------- |
+| keys       | 获取所有键名可遍历对象 |
+| values     | 获取所有键值可遍历对象 |
+| length     | 获取键值对数量         |
+| isEmpty    | 判断是否为空对象       |
+| isNotEmpty | 判断是否为非空对象     |
 
 方法
 
