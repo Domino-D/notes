@@ -139,7 +139,7 @@ const bool d1 = false;
 
 #### 字符串属性与操作方法
 
-###### 属性 
+###### 属性
 
 | 属性       | 描述                       |
 | ---------- | -------------------------- |
@@ -149,16 +149,39 @@ const bool d1 = false;
 
 ###### 方法
 
-| 方法          | 描述                                                         |
-| :------------ | :----------------------------------------------------------- |
-| toLowerCase() | 将此字符串中的所有字符转换为小写，不改变本身                 |
-| toUpperCase() | 将此字符串中的所有字符转换为大写，不改变本身                 |
-| trim()        | 去除头尾空格的字符串，不改变本身                             |
-| compareTo()   | 将此对象与另一对象进行比较，小于本身1，相等0，大于本身-1，字符串比较 |
-| replaceAll()  | 用给定值替换与指定模式匹配的所有子字符串，不改变本身，返回结果字符串 |
-| split()       | 在指定分隔符的匹配处拆分字符串，返回子字符串列表             |
-| substring()   | 返回此字符串的子字符串，[左开右闭)                           |
-| toString()    | 返回此对象的字符串表示形式                                   |
+| 方法                                                         | 描述                                                         |
+| :----------------------------------------------------------- | :----------------------------------------------------------- |
+| compareTo(String other) → int                                | 将此对象与另一对象进行比较，小于本身1，相等0，大于本身-1，字符串比较 |
+| contains(Pattern other, [int startIndex = 0]) → bool         | 判断字符串中是否包含给定字符串或正则表达式，返回【boolean】  |
+| endsWith(String other) → bool                                | 判断字符串是否以给定字符串结尾，返回【boolean】              |
+| indexOf(Pattern pattern, [int start]) → int                  | 获取给定字符串在字符串中的第一个指针值                       |
+| lastIndexOf(Pattern pattern, [int start]) → int              | 获取给定字符串在字符串中的最后一个指针值                     |
+| padLeft(int width, [String padding = ' ']) → String          | 如果字符串自身长度小于width，在字符串左侧填补padding补足     |
+| padRight(int width, [String padding = ' ']) → String         | 如果字符串自身长度小于width，在字符串右侧填补padding补足     |
+| replaceAll(Pattern from, String replace) → String            | 全局替换内容，返回替换后字符串，不改变原字符串               |
+| replaceFirst(Pattern from, String to, [int startIndex = 0]) → String | 替换字符串中第一个匹配内容，可指定匹配起始指针，返回新字符串，不改变原字符串 |
+| split(Pattern pattern) → List<String>                        | 按照给定方式，将字符串拆分为列表，返回列表                   |
+| splitMapJoin(Pattern pattern, {(Match) → String onMatch, (String) → String onNonMatch}) → String | 同时替换匹配目标和不匹配目标，返回字符串                     |
+| startsWith(Pattern pattern, [int index = 0]) → bool          | 判断字符串是否以给定字符串开头，返回【boolean】              |
+| substring(int startIndex, [int endIndex]) → String           | 返回此字符串的子字符串，[左闭右开)，未指定结束指针默认为末尾指针 |
+| toLowerCase()                                                | 将此字符串中的所有字符转换为小写，不改变本身                 |
+| toString()                                                   | 返回此对象的字符串表示形式                                   |
+| toUpperCase()                                                | 将此字符串中的所有字符转换为大写，不改变本身                 |
+| trim()                                                       | 去除字符串首尾空格，不改变本身                               |
+| trimLeft()                                                   | 去除字符串首部空格，不改变本身                               |
+| trimRight()                                                  | 去除字符串尾部空格，不改变本身                               |
+
+示例
+
+```dart
+// padLeft
+'abc'.padLeft(5, '_'); // __abc
+'abc'.padLeft(1, '_'); // abc
+
+// splitMapJoin
+'ababab'.splitMapJoin('a', onMatch: (m) => 'c', onNonMatch: (n) => 'd'); // cdcdcd
+'ababab'.splitMapJoin('a', onMatch: (m) => 'c', onNonMatch: (n) => n); // cbcbcb
+```
 
 
 
@@ -177,18 +200,32 @@ const bool d1 = false;
 
 方法
 
-| 方法         | 描述                                    |
-| ------------ | --------------------------------------- |
-| abs()        | 取绝对值                                |
-| ceil()       | 向上取整                                |
-| floor()      | 向下取整                                |
-| round()      | 四舍五入                                |
-| remainder(x) | x表述除数，计算数值除以除数后得到的余数 |
-| compareTo()  | 比较数值两数值大小，返回 1，-1，0       |
-| toInt()      | 转为整型                                |
-| toDouble()   | 转为浮点型                              |
-| toString()   | 转为字符串                              |
-| truncate()   | 舍去小数，截断功能                      |
+| 方法                                        | 描述                                                         |
+| ------------------------------------------- | ------------------------------------------------------------ |
+| abs()                                       | 取绝对值                                                     |
+| ceil()                                      | 向上取整                                                     |
+| ceilToDouble()                              | 向上取整同时转为浮点型                                       |
+| clamp(num lowerLimit, num upperLimit) → num | 数字在区间内，返回该数字；数字不在区间内，返回最接近该数字的边界值 lowerLimit \|\| upperLimit |
+| compareTo(num other) → int                  | 比较数值两数值大小，返回 1，-1，0                            |
+| floor()                                     | 向下取整                                                     |
+| floorToDouble()                             | 向下取整同时转为浮点型                                       |
+| round()                                     | 四舍五入                                                     |
+| roundToDouble()                             | 四舍五入同时转为浮点型                                       |
+| remainder(x)                                | x表述除数，计算数值除以除数后得到的余数                      |
+| toInt()                                     | 转为整型                                                     |
+| toDouble()                                  | 转为浮点型                                                   |
+| toString()                                  | 转为字符串                                                   |
+| truncate()                                  | 舍去小数，截断功能                                           |
+
+示例
+
+```dart
+// clamp
+num number = 6,4;
+number.clamp(5, 7); // 6.4
+number.clamp(5, 6); // 6
+number.clamp(7, 9); // 7
+```
 
 
 
@@ -219,9 +256,9 @@ const bool d1 = false;
 | elementAt(index)                                             | 返回对应指针的元素值                                         |
 | every()                                                      | 列表中是否每个元素都满足条件【boolean】                      |
 | expand((el) => statement)                                    | 对列表中的每个元素进行扩展操作，返回可遍历对象(el1, el2, el3, ...) |
-| fillRange(int start, int end, [int fillValue])               | 指定指针区间单一元素填充，start 必填，end 必填，左闭右开，fillValue 为单个 int 型变量 |
+| fillRange(int start, int end, [int fillValue])               | 指定指针区间单一元素填充，start 必填，end 必填，[左闭右开)，fillValue 为单个 int 型变量 |
 | firstWhere((E) → bool test, {() → E orElse})                 | 返回列表中满足条件的第一个元素，不满足则返回-1               |
-| getRange(int start, int end)                                 | 获取指针区间内元素的可遍历对象，左闭右开                     |
+| getRange(int start, int end)                                 | 获取指针区间内元素的可遍历对象，[左闭右开)                   |
 | insert(int index, int value)                                 | 在列表指定指针位置插入单个int型元素                          |
 | insertAll(int index, Iterable<int> iterable)                 | 在列表指定指针位置插入int型元素列表                          |
 | indexOf(el)                                                  | 返回给定元素指针，不满足则返回-1                             |
@@ -243,7 +280,7 @@ const bool d1 = false;
 | shuffle() → void                                             | 随机排序列表，无返回值                                       |
 | skip(int count) → Iterable<E>                                | 跳过列表前count个元素，返回可遍历对象，非列表                |
 | sort([(int, int) → int compare]) → void                      | 快速排序                                                     |
-| sublist(int start, [int end]) → List<String>                 | 从列表中截取起止指针区间内的元素，返回结果列表，左闭右开     |
+| sublist(int start, [int end]) → List<String>                 | 从列表中截取起止指针区间内的元素，返回结果列表，[左闭右开)   |
 | take(int count) → Iterable<E>                                | 截取列表前count个元素，并返回可遍历对象                      |
 | takeWhile((E) → bool test) → Iterable<E>                     | 从列表首个元素开始验证条件，返回可遍历对象，任一元素不符合条件，立即停止条件判断 |
 | toList()                                                     | 列表化数据，可遍历对象转列表                                 |
@@ -427,6 +464,8 @@ def
 */
 ```
 
+
+
 #### 字典（对象）
 
 属性
@@ -441,10 +480,14 @@ def
 
 方法
 
-| 方法                   | 描述                                     |
-| ---------------------- | ---------------------------------------- |
-| addAll()               | 末尾添加键值对                           |
-| clear()                | 清空对象                                 |
-| remove(key)            | 删除指定键值对，返回值为指定键值对应的值 |
-| forEach((k, v) => ...) | 循环调用内部键值对方法                   |
+| 方法                                                    | 描述                                     |
+| ------------------------------------------------------- | ---------------------------------------- |
+| addAll()                                                | 末尾添加键值对                           |
+| clear()                                                 | 清空对象                                 |
+| containsKey(Object key) → bool                          | 判断对象中是否包含某个键名               |
+| containsValue(Object value) → bool                      | 判断对象中是否包含某个键值               |
+| forEach((k, v) => ...)                                  | 循环调用内部键值对方法                   |
+| remove(key)                                             | 删除指定键值对，返回值为指定键值对应的值 |
+| removeWhere((dynamic, dynamic) → bool predicate) → void | 删除满足条件的键值对                     |
+| toString()                                              | 转换为字符串                             |
 
