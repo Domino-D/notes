@@ -198,7 +198,7 @@ const bool d1 = false;
 | isEven     | 判断数字为偶数                          |
 | isOdd      | 判断数字为奇数                          |
 
-方法
+###### 方法
 
 | 方法                                        | 描述                                                         |
 | ------------------------------------------- | ------------------------------------------------------------ |
@@ -231,7 +231,7 @@ number.clamp(7, 9); // 7
 
 #### 列表属性与操作方法
 
-属性
+###### 属性
 
 | 属性       | 描述                                                         |
 | ---------- | ------------------------------------------------------------ |
@@ -243,7 +243,7 @@ number.clamp(7, 9); // 7
 | reversed   | 返回倒序列表                                                 |
 | single     | 检查列表是否只用一个元素并返回该元素，否则报错[Too many elements] |
 
-方法
+###### 方法
 
 | 方法                                                         | 描述                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -254,19 +254,19 @@ number.clamp(7, 9); // 7
 | clear()                                                      | 清空列表，改变原列表                                         |
 | contains(el)                                                 | 列表中是否包含某元素【boolean】，类同于any()                 |
 | elementAt(index)                                             | 返回对应指针的元素值                                         |
-| every()                                                      | 列表中是否每个元素都满足条件【boolean】                      |
+| every((E) → bool test) → bool                                | 列表中是否每个元素都满足条件【boolean】                      |
 | expand((el) => statement)                                    | 对列表中的每个元素进行扩展操作，返回可遍历对象(el1, el2, el3, ...) |
 | fillRange(int start, int end, [int fillValue])               | 指定指针区间单一元素填充，start 必填，end 必填，[左闭右开)，fillValue 为单个 int 型变量 |
 | firstWhere((E) → bool test, {() → E orElse})                 | 返回列表中满足条件的第一个元素，不满足则返回-1               |
-| getRange(int start, int end)                                 | 获取指针区间内元素的可遍历对象，[左闭右开)                   |
+| getRange(int start, int end) → Iterable<E>                   | 获取指针区间内元素的可遍历对象，[左闭右开)                   |
 | insert(int index, int value)                                 | 在列表指定指针位置插入单个int型元素                          |
 | insertAll(int index, Iterable<int> iterable)                 | 在列表指定指针位置插入int型元素列表                          |
-| indexOf(el)                                                  | 返回给定元素指针，不满足则返回-1                             |
+| indexOf(el) → int                                            | 返回给定元素指针，不满足则返回-1                             |
 | indexWhere((int) → bool test, [int start = 0])               | 返回列表中满足条件的第一个元素的指针，可指定验证起始指针，默认从头开始，不满足则返回-1 |
 | join([String separator = ""])                                | 返回字符串，默认不分割，参照JS中join方法                     |
 | lastIndexOf(int element, [int start])                        | 返回指定元素的指针值，可以给定起始查询指针，不满足则返回-1   |
-| lastIndexWhere((int) → bool test, [int start])               | 返回列表中满足条件的第一个元素的指针，可指定验证起始指针，不满足则返回-1 |
-| lastIndexWhere((int) → bool test, [int start])               | 返回列表中满足条件的最后一个元素，不满足则返回-1             |
+| lastIndexWhere((dynamic) → bool test, [int start]) → int     | 返回列表中满足条件的倒数第一个元素的指针，可指定起始指针，不满足则返回-1 |
+| lastWhere((E) → bool test, {() → E orElse}) → E              | 返回列表中满足条件的倒数第一个元素，否则报错                 |
 | map<T>((E) → T f)                                            | 遍历扩展每个列表中的元素，返回可遍历对象                     |
 | removeAt(int index) → int                                    | 删除指定指针对应的元素值，返回被删除元素，更改原列表         |
 | remove(el)                                                   | 删除指定元素值，返回【boolean】，更改原列表                  |
@@ -308,6 +308,16 @@ list.fillRange(1, 3, 4); // [1, 4, 4]
 List foo = [1, 2, 3];
 var res = foo.getRange(1, 3);
 print(res); // (2, 3)
+
+// lastIndexWhere
+List liw = [4, 5, 6];
+liw.lastIndexWhere((el) => el > 4); // 2
+liw.lastIndexWhere((el) => el > 1, 1) // 1
+liw.lastIndexWhere((el) => el > 1, 0) // -1
+
+// lastWhere
+List lw = [4, 5, 6];
+lw.lastWhere((el) => el > 1); // 6
 
 // map
 var ls = [1, 2, 3];
@@ -468,7 +478,7 @@ def
 
 #### 字典（对象）
 
-属性
+###### 属性
 
 | 属性       | 描述                   |
 | ---------- | ---------------------- |
@@ -478,7 +488,7 @@ def
 | isEmpty    | 判断是否为空对象       |
 | isNotEmpty | 判断是否为非空对象     |
 
-方法
+###### 方法
 
 | 方法                                                    | 描述                                     |
 | ------------------------------------------------------- | ---------------------------------------- |
