@@ -267,7 +267,7 @@ number.clamp(7, 9); // 7
 | lastIndexOf(int element, [int start])                        | 返回指定元素的指针值，可以给定起始查询指针，不满足则返回-1   |
 | lastIndexWhere((dynamic) → bool test, [int start]) → int     | 返回列表中满足条件的倒数第一个元素的指针，可指定起始指针，不满足则返回-1 |
 | lastWhere((E) → bool test, {() → E orElse}) → E              | 返回列表中满足条件的倒数第一个元素，否则报错                 |
-| map<T>((E) → T f)                                            | 遍历扩展每个列表中的元素，返回可遍历对象                     |
+| map<T>((E) → T f) → iterable<T>                              | 遍历扩展每个列表中的元素，返回可遍历对象                     |
 | removeAt(int index) → int                                    | 删除指定指针对应的元素值，返回被删除元素，更改原列表         |
 | remove(el)                                                   | 删除指定元素值，返回【boolean】，更改原列表                  |
 | removeLast() → int                                           | 删除列表最后一个元素，返回被删除元素值，更改原列表           |

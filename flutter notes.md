@@ -2,10 +2,6 @@
 
 #### Demo
 
-> - MaterialApp
-> - Scaffold
-> - Text
->
 > ```dart
 > import 'package:flutter/material.dart';
 > 
@@ -14,31 +10,55 @@
 > var name = 'k';
 > 
 > class MyApp extends StatelessWidget {
->  	@override
->  	Widget build(BuildContext context) {
->    		return new MaterialApp(
->      		title: "title",
->      		theme: ThemeData.light(), //背景主题色
->      		debugShowCheckedModeBanner: false, //消除界面右上角debug标签
->      		home: new Scaffold(
->        		body: new Text(
->          		"data $name", //变量引用，以$开头：$variablity
->          		textAlign: TextAlign.center,
->          		overflow: TextOverflow.clip, //clip:折叠; ellipsis:省略号; fade:淡出
->          		textScaleFactor: 3, //放大比率
->          		style: TextStyle(
->            		fontWeight: FontWeight.bold,
->            		fontFamily: "arial",
->            		height: 2, //行高
->            		decoration: TextDecoration.underline, //文本装饰类型
->            		decorationColor: Colors.red, //文本装饰颜色
->            		decorationStyle: TextDecorationStyle.dashed, //文本装饰样式
->          		),
->        		),
->      		),
->    		);
->  	}
+> 	@override
+> 	Widget build(BuildContext context) {
+> 		return new MaterialApp(
+>   		title: "title",
+>   		theme: ThemeData.light(), //背景主题色
+>   		debugShowCheckedModeBanner: false, //消除界面右上角debug标签
+>   		home: new Scaffold(
+>     		body: new Text(
+>       		"data $name", //变量引用，以$开头：$variablity
+>       		textAlign: TextAlign.center,
+>       		overflow: TextOverflow.clip, //clip:折叠; ellipsis:省略号; fade:淡出
+>       		textScaleFactor: 3, //放大比率
+>       		style: TextStyle(
+>         		fontWeight: FontWeight.bold,
+>         		fontFamily: "arial",
+>         		height: 2, //行高
+>         		decoration: TextDecoration.underline, //文本装饰类型
+>         		decorationColor: Colors.red, //文本装饰颜色
+>         		decorationStyle: TextDecorationStyle.dashed, //文本装饰样式
+>       		),
+>     		),
+>   		),
+> 		);
+> 	}
 > }
+> ```
+>
+> * Scaffold
+>
+> ```dart
+> (new) Scaffold({
+>   Key key,
+>   PreferredSizeWidget appBar,
+>   Widget body,
+>   Widget floatingActionButton,
+>   FloatingActionButtonLocation floatingActionButtonLocation,
+>   FloatingActionButtonAnimator floatingActionButtonAnimator,
+>   List<Widget> persistentFooterButtons,
+>   Widget drawer,
+>   Widget endDrawer,
+>   Widget bottomNavigationBar,
+>   Widget bottomSheet,
+>   Color backgroundColor,
+>   bool resizeToAvoidBottomPadding,
+>   bool resizeToAvoidBottomInset,
+>   bool primary: true,
+>   DragStartBehavior drawerDragStartBehavior: DragStartBehavior.start,
+>   bool extendBody: false
+> }) → Scaffold
 > ```
 
 #### Basic widgets
@@ -312,11 +332,15 @@
 > //as above
 > ```
 >
+> 
+>
 > Padding
 >
 > ```dart
 > Padding({Key key, EdgeInsetsGeometry padding, Widget child}) → Padding
 > ```
+>
+> 
 >
 > Center
 >
@@ -324,11 +348,15 @@
 > Center({Key key, double widthFactor, double heightFactor, Widget child}) → Center
 > ```
 >
+> 
+>
 > Align
 >
 > ```dart
 > Align({Key key, AlignmentGeometry alignment: Alignment.center, double widthFactor, double heightFactor, Widget child}) → Align
 > ```
+>
+> 
 >
 > FittedBox 内部元素大小随动变化
 >
@@ -336,11 +364,15 @@
 > FittedBox({Key key, BoxFit fit: BoxFit.contain, AlignmentGeometry alignment: Alignment.center, Widget child}) → FittedBox
 > ```
 >
+> 
+>
 > AspectRatio   定长宽比widget
 >
 > ```dart
 > AspectRatio({Key key, double aspectRatio, Widget child}) → AspectRatio
 > ```
+>
+> 
 >
 > ConstrainedBox 约束内部元素widget
 >
@@ -348,17 +380,23 @@
 > ConstrainedBox({Key key, BoxConstraints constraints, Widget child}) → ConstrainedBox
 > ```
 >
+> 
+>
 > IntrinsicHeight 子元素撑满高度
 >
 > ```dart
 > IntrinsicHeight({Key key, Widget child}) → IntrinsicHeight
 > ```
 >
+> 
+>
 > IntrinsicWidth  子元素撑满宽度
 >
 > ```dart
 > IntrinsicWidth({Key key, double stepWidth, double stepHeight, Widget child}) → IntrinsicWidth
 > ```
+>
+> 
 >
 > ##### Complex layout
 >
@@ -368,11 +406,15 @@
 > //as above
 > ```
 >
+> 
+>
 > Column
 >
 > ```dart
 > //as above
 > ```
+>
+> 
 >
 > Stack 允许堆叠
 >
@@ -380,11 +422,15 @@
 > Stack({Key key, AlignmentGeometry alignment: AlignmentDirectional.topStart, TextDirection textDirection, StackFit fit: StackFit.loose, Overflow overflow: Overflow.clip, List<Widget> children: const <Widget> []}) → Stack
 > ```
 >
+> 
+>
 > Flow 
 >
 > ```dart
 > Flow({Key key, FlowDelegate delegate, List<Widget> children: const <Widget> []}) → Flow
 > ```
+>
+> 
 >
 > Table
 >
@@ -392,11 +438,15 @@
 > Table({Key key, List<TableRow> children: const <TableRow> [], Map<int, TableColumnWidth> columnWidths, TableColumnWidth defaultColumnWidth: const FlexColumnWidth(1.0), TextDirection textDirection, TableBorder border, TableCellVerticalAlignment defaultVerticalAlignment: TableCellVerticalAlignment.top, TextBaseline textBaseline}) → Table
 > ```
 >
+> 
+>
 > Wrap
 >
 > ```dart
 > Wrap({Key key, Axis direction: Axis.horizontal, WrapAlignment alignment: WrapAlignment.start, double spacing: 0.0, WrapAlignment runAlignment: WrapAlignment.start, double runSpacing: 0.0, WrapCrossAlignment crossAxisAlignment: WrapCrossAlignment.start, TextDirection textDirection, VerticalDirection verticalDirection: VerticalDirection.down, List<Widget> children: const <Widget> []}) → Wrap
 > ```
+>
+> 
 >
 > ListBody
 >
@@ -404,9 +454,84 @@
 > ListBody({Key key, Axis mainAxis: Axis.vertical, bool reverse: false, List<Widget> children: const <Widget> []}) → ListBody
 > ```
 >
+> 
+>
 > ListView
 >
 > ```dart
 > ListView({Key key, Axis scrollDirection: Axis.vertical, bool reverse: false, ScrollController controller, bool primary, ScrollPhysics physics, bool shrinkWrap: false, EdgeInsetsGeometry padding, double itemExtent, bool addAutomaticKeepAlives: true, bool addRepaintBoundaries: true, bool addSemanticIndexes: true, double cacheExtent, List<Widget> children: const <Widget> [], int semanticChildCount, DragStartBehavior dragStartBehavior: DragStartBehavior.down}) → ListView
 > ```
 
+#### Transitions
+
+> FadeTransition
+>
+> ```dart
+> (new) FadeTransition({Key key, Animation<double> opacity, bool alwaysIncludeSemantics: false, Widget child}) → FadeTransition
+> ```
+>
+> 
+>
+> SizeTransition
+>
+> ```dart
+> (new) SizeTransition({Key key, Axis axis: Axis.vertical, Animation<double> sizeFactor, double axisAlignment: 0.0, Widget child}) → SizeTransition
+> ```
+>
+> 
+>
+> AlignTransition
+>
+> ```dart
+> (new) AlignTransition({Key key, Animation<AlignmentGeometry> alignment, Widget child, double widthFactor, double heightFactor}) → AlignTransition
+> ```
+>
+> 
+>
+> ScaleTransition
+>
+> ```dart
+> (new) ScaleTransition({Key key, Animation<double> scale, Alignment alignment: Alignment.center, Widget child}) → ScaleTransition
+> ```
+>
+> 
+>
+> SlideTransition
+>
+> ```dart
+> (new) SlideTransition({Key key, Animation<Offset> position, bool transformHitTests: true, TextDirection textDirection, Widget child}) → SlideTransition
+> ```
+>
+> 
+>
+> RotationTransition
+>
+> ```dart
+> (new) RotationTransition({Key key, Animation<double> turns, Alignment alignment: Alignment.center, Widget child}) → RotationTransition
+> ```
+>
+> 
+>
+> PositionedTransition
+>
+> ```dart
+> (new) PositionedTransition({Key key, Animation<RelativeRect> rect, Widget child}) → PositionedTransition
+> ```
+
+#### Tween
+
+> ```dart
+> (new) Tween({double begin}, {double end}) → Tween<double>
+> ```
+
+#### Duration
+
+> ```dart
+> (new) Duration({int days: 0, int hours: 0, int minutes: 0, int seconds: 0, int milliseconds: 0, int microseconds: 0}) → Duration
+> ```
+
+#### AnimationController
+
+> ```dart
+> (new) AnimationController({double value, Duration duration, String debugLabel, double lowerBound: 0.0, double upperBound: 1.0, AnimationBehavior animationBehavior: AnimationBehavior.normal, TickerProvider vsync}) → AnimationController
+> ```
