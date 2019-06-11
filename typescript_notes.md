@@ -20,6 +20,8 @@
 
 
 
+
+
 #### TypeScript in React
 
 ###### import
@@ -27,6 +29,23 @@
 ```typescript
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
+```
+
+###### import(module)
+
+```typescript
+import React, { Component } from 'react'
+```
+
+```json
+// tsconfig.json need changed like bellow
+{
+  "compilerOptions": {
+    // ...
+    "esModuleInterop": true, // add one line
+  },
+  // ...
+}
 ```
 
 ###### console
@@ -38,7 +57,24 @@ import * as ReactDOM from 'react-dom'
 {
   // ...
   "rules": {
+    // ...
     "no-console": false
+  }
+  // ...
+}
+```
+
+###### jsx-no-lambda
+
+`Error: Lambdas are forbidden in JSX attributes due to their rendering performance impact`
+
+```typescript
+// tslint.json
+{
+  // ...
+  "rules": {
+    // ...
+    "jsx-no-lambda": false
   }
   // ...
 }
@@ -66,21 +102,6 @@ private getItemDetail() {
 }
 ```
 
-###### jsx-no-lambda
-
-`Error: Lambdas are forbidden in JSX attributes due to their rendering performance impact`
-
-```typescript
-// tslint.json
-{
-  // ...
-  "rules": {
-    "jsx-no-lambda": false
-  }
-  // ...
-}
-```
-
 ###### state
 
 ```typescript
@@ -100,6 +121,24 @@ export default class App extends React.Component<{}, IState> {
   // ...
 }
 ```
+
+###### alphabetized (ordered imports)
+
+```json
+// tslint.json need changed to forbidden ordered rule
+{
+  // ...
+  "rules": {
+    // ...
+    "ordered-imports": false //add one line
+  }
+  // ...
+}
+```
+
+###### react-router-dom & react-hot-loader
+
+`easy to migrate`
 
 
 
@@ -166,10 +205,10 @@ null
 let n: null = null
 ```
 
-undefinde
+undefined
 
 ```typescript
-let u: undefinde = undefined
+let u: undefined = undefined
 ```
 
 assertion
@@ -181,6 +220,8 @@ let strLength: number = (<string>str).length
 let strs: any = "strings"
 let strLength: number = (strs as string).length
 ```
+
+
 
 ##### interface
 
