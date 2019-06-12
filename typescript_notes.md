@@ -58,7 +58,7 @@ import React, { Component } from 'react'
   // ...
   "rules": {
     // ...
-    "no-console": false
+    "no-console": false, //add one line
   }
   // ...
 }
@@ -74,7 +74,7 @@ import React, { Component } from 'react'
   // ...
   "rules": {
     // ...
-    "jsx-no-lambda": false
+    "jsx-no-lambda": false, // add one line
   }
   // ...
 }
@@ -107,12 +107,12 @@ private getItemDetail() {
 ```typescript
 import * as React from 'react'
 
-interface IState {
+interface IState { // interface defined start with 'I'
   list: object[]
 }
 
 export default class App extends React.Component<{}, IState> {
-  public state: IState = {
+  public state: IState = { // public defined
     list: [
       { id: 1, name: 'a' },
       { id: 2, name: 'b' },
@@ -148,7 +148,7 @@ export default class App extends React.Component<{}, IState> {
 
 ##### variables
 
-###### Normal
+Normal
 
 ```typescript
 let bool: boolean = true
@@ -233,3 +233,41 @@ interface objConfig {
 }
 ```
 
+
+
+##### function
+
+```typescript
+function func_a(x: string, y: number): void {
+  // ...
+}
+
+function func_b(x: number, y: number): number {
+  // ...
+  return x + y
+}
+
+function func_c(x: string, y?: number): void {
+  // ...
+}
+
+function func(x: string, y = 1): void {
+  // ...
+}
+```
+
+
+
+##### generic
+
+```typescript
+function func<T>(arg: T): T {
+  // ...
+}
+```
+
+
+
+#### Else
+
+similar with JS, ES6
