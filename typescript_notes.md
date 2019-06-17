@@ -24,6 +24,24 @@
 
 #### TypeScript in React
 
+###### rootDir
+
+```json
+// as to rootDir defined in tsconfig.json
+{
+  "compilerOptions": {
+    // ...
+    "rootDir": "src",
+    // ...
+  }
+}
+```
+
+- <u>***config folder must be included in src folder***</u>
+- <u>***path of profiles in the config folder need to change together***</u>
+
+
+
 ###### import
 
 ```typescript
@@ -79,6 +97,24 @@ import React, { Component } from 'react'
   // ...
 }
 ```
+
+###### member-ordering
+
+`Error: Declaration of public instance field not allowed after declaration of constructor`
+
+```json
+// tslint.json
+{
+  // ...
+  "rules": {
+    // ...
+    "member-ordering": false, // add one line
+  }
+  // ...
+}
+```
+
+
 
 ###### lifecircle functions
 
@@ -136,9 +172,34 @@ export default class App extends React.Component<{}, IState> {
 }
 ```
 
-###### react-router-dom & react-hot-loader
+###### react-router-dom & react-hot-loader & redux
 
 `easy to migrate`
+
+###### mobx
+
+```typescript
+// we often define observable like bellow
+import { observable, action } from 'mobx'
+
+class TestStore {
+  @observable public name: string // this line will alert warning obout 'experimentalDecorators'
+  // ...
+}
+
+export default new TestStore()
+```
+
+```json
+// tsconfig.json need changed like bellow
+{
+  "compilerOptions": {
+    // ...
+    "experimentalDecorators": true, // add this line to disappear waning
+    // ...
+  }
+}
+```
 
 
 
@@ -265,6 +326,8 @@ function func<T>(arg: T): T {
   // ...
 }
 ```
+
+
 
 
 
