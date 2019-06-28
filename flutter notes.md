@@ -535,3 +535,4 @@
 > ```dart
 > (new) AnimationController({double value, Duration duration, String debugLabel, double lowerBound: 0.0, double upperBound: 1.0, AnimationBehavior animationBehavior: AnimationBehavior.normal, TickerProvider vsync}) → AnimationController
 > ```
+
